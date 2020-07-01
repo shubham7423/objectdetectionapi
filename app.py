@@ -15,6 +15,11 @@ od = object_detection()
 od.load_model()
 # class Detections(Resource):
 #     @staticmethod
+
+@app.route('/')
+def home():    
+     return "Welcome"
+
 @app.route('/detection', methods=['POST'])
 def get_image():
     image = request.files["images"]
